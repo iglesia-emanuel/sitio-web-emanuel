@@ -1,0 +1,258 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+site_url: https://zippy-sundae-69844e.netlify.app
+display_url: https://zippy-sundae-69844e.netlify.app
+logo_url: /icons/church.png
+
+locale: "es"
+
+collections:
+  - name: "home"
+    label: "Inicio"
+    files:
+      - file: "index.njk"
+        label: "Página de inicio"
+        name: "home"
+        fields:
+          - {label: "Título de pestaña", name: "title", widget: "string"}
+          - {label: "Descripción SEO", name: "description", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Etiqueta", name: "tag", widget: "string"}
+              - {label: "Título principal", name: "title", widget: "string"}
+              - {label: "Texto", name: "lead", widget: "text"}
+              - {label: "Imagen", name: "image", widget: "image"}
+              - {label: "Texto alternativo de la imagen", name: "image_alt", widget: "string"}
+          - label: "Estadísticas (barra debajo del hero)"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Número", name: "number", widget: "string"}
+              - {label: "Etiqueta", name: "label", widget: "string"}
+          - label: "Bloque '¿Somos una ONG?'"
+            name: "identity_box"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Proyecto destacado"
+            name: "campaign"
+            widget: "object"
+            fields:
+              - {label: "Etiqueta", name: "tag", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Imagen", name: "image", widget: "image"}
+              - {label: "Texto alternativo de la imagen", name: "image_alt", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+              - {label: "Resultados (chips)", name: "results", widget: "list"}
+              - {label: "Texto extra", name: "extra", widget: "text", required: false}
+              - {label: "Link URL", name: "link_url", widget: "string", required: false}
+              - {label: "Link texto", name: "link_label", widget: "string", required: false}
+          - label: "Cita destacada"
+            name: "quote"
+            widget: "object"
+            fields:
+              - {label: "Texto", name: "text", widget: "text"}
+              - {label: "Autor / atribución", name: "author", widget: "string"}
+          - {label: "Introducción a los ejes", name: "ejes_intro", widget: "text"}
+          - label: "Seis ejes de trabajo"
+            name: "ejes"
+            widget: "list"
+            fields:
+              - {label: "Número (ej: 01)", name: "num", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Ubicaciones donde trabajamos"
+            name: "locations"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "name", widget: "string"}
+              - {label: "Detalle", name: "detail", widget: "string"}
+          - label: "Bloque 'Sumate' (campaña)"
+            name: "sumate_campaign"
+            widget: "object"
+            fields:
+              - {label: "Etiqueta", name: "tag", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Imagen", name: "image", widget: "image"}
+              - {label: "Texto alternativo de la imagen", name: "image_alt", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - {label: "Introducción a aliados", name: "partners_intro", widget: "text"}
+          - {label: "Aliados / marcas (nombres)", name: "partners", widget: "list"}
+          - label: "CTA final"
+            name: "final_cta"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+
+  - name: "sobre-nosotros"
+    label: "Sobre nosotros"
+    files:
+      - file: "sobre-nosotros.njk"
+        label: "Página Sobre nosotros"
+        name: "sobre-nosotros"
+        fields:
+          - {label: "Título de pestaña", name: "title", widget: "string"}
+          - {label: "Descripción SEO", name: "description", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Bloque '¿Somos una ONG?'"
+            name: "identity_box"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - {label: "Introducción a la historia", name: "historia_intro", widget: "text"}
+          - label: "Línea de tiempo"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - {label: "Año / período", name: "year", widget: "string"}
+              - {label: "Texto", name: "text", widget: "text"}
+          - label: "Cita destacada"
+            name: "quote"
+            widget: "object"
+            fields:
+              - {label: "Texto", name: "text", widget: "text"}
+              - {label: "Autor / atribución", name: "author", widget: "string"}
+          - label: "Valores"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "name", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+              - {label: "Ícono (nombre de archivo, ej: cross.png)", name: "icon", widget: "string"}
+              - label: "Color"
+                name: "color"
+                widget: "select"
+                options: ["terracotta", "teal", "gold", "dark"]
+          - label: "Gobierno institucional"
+            name: "org_tiers"
+            widget: "list"
+            fields:
+              - {label: "Nombre del nivel", name: "label", widget: "string"}
+              - label: "Personas"
+                name: "people"
+                widget: "list"
+                fields:
+                  - {label: "Nombre", name: "name", widget: "string"}
+                  - {label: "Rol", name: "role", widget: "string"}
+                  - {label: "Todavía sin definir (mostrar como placeholder)", name: "placeholder", widget: "boolean", required: false, default: false}
+          - label: "Datos legales"
+            name: "legal_rows"
+            widget: "list"
+            fields:
+              - {label: "Etiqueta", name: "label", widget: "string"}
+              - {label: "Valor", name: "value", widget: "string"}
+          - label: "Cómo rendimos cuentas"
+            name: "trust_items"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+              - {label: "Ícono (nombre de archivo)", name: "icon", widget: "string"}
+          - label: "Capacidad operativa"
+            name: "capacidad"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+              - {label: "Ícono (nombre de archivo)", name: "icon", widget: "string"}
+
+  - name: "nuestro-trabajo"
+    label: "Nuestro trabajo"
+    files:
+      - file: "nuestro-trabajo.njk"
+        label: "Página Nuestro trabajo"
+        name: "nuestro-trabajo"
+        fields:
+          - {label: "Título de pestaña", name: "title", widget: "string"}
+          - {label: "Descripción SEO", name: "description", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Seis ejes en detalle"
+            name: "programs"
+            widget: "list"
+            fields:
+              - {label: "ID (ancla, sin espacios)", name: "id", widget: "string"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Imagen", name: "image", widget: "image"}
+              - {label: "Texto alternativo de la imagen", name: "image_alt", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+              - {label: "Mostrar imagen a la derecha", name: "reverse", widget: "boolean", required: false, default: false}
+              - {label: "Resultados (chips)", name: "results", widget: "list"}
+              - {label: "Resultados son estimados (sin datos aún)", name: "results_placeholder", widget: "boolean", required: false, default: false}
+              - {label: "Texto extra (opcional)", name: "extra", widget: "string", required: false}
+          - label: "Cita destacada"
+            name: "quote"
+            widget: "object"
+            fields:
+              - {label: "Texto", name: "text", widget: "text"}
+              - {label: "Autor / atribución", name: "author", widget: "string"}
+          - label: "CTA final"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+
+  - name: "sumate"
+    label: "Sumate"
+    files:
+      - file: "sumate.njk"
+        label: "Página Sumate"
+        name: "sumate"
+        fields:
+          - {label: "Título de pestaña", name: "title", widget: "string"}
+          - {label: "Descripción SEO", name: "description", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Para empresas"
+            name: "empresas"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Valor mutuo (qué recibe la empresa)"
+            name: "valor_mutuo"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Para personas"
+            name: "personas"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "text"}
+          - label: "Datos de contacto"
+            name: "contact_items"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto", name: "body", widget: "string"}
+              - {label: "Ícono (nombre de archivo)", name: "icon", widget: "string"}
