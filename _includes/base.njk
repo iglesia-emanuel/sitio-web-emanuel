@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">
+      <span class="logo-mark"><img src="https://6a5b82756ffa544c41fc3967--zippy-sundae-69844e.netlify.app/icons/church.png" alt=""></span>
+      EMANUEL
+    </a>
+    <nav class="main-nav">
+      <a href="/"{% if page.url == "/" %} class="active"{% endif %}>Inicio</a>
+      <a href="/sobre-nosotros/"{% if page.url == "/sobre-nosotros/" %} class="active"{% endif %}>Sobre nosotros</a>
+      <a href="/nuestro-trabajo/"{% if page.url == "/nuestro-trabajo/" %} class="active"{% endif %}>Nuestro trabajo</a>
+      <a href="/sumate/"{% if page.url == "/sumate/" %} class="active"{% endif %}>Sumate</a>
+      <a href="/sumate/#contacto">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="/sumate/" class="btn btn-dark">Quiero colaborar</a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark"><img src="https://6a5b82756ffa544c41fc3967--zippy-sundae-69844e.netlify.app/icons/church.png" alt=""></span>
+          <span>EMANUEL</span>
+        </div>
+        <p>Iglesia Cristiana Evangélica · Asociación Civil Emanuel, IVA Exento. Coronel Brandsen 1681, Avellaneda, Buenos Aires.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/iglesia_ema/"><img src="https://6a5b82756ffa544c41fc3967--zippy-sundae-69844e.netlify.app/icons/instagram.png" alt="Instagram"></a>
+          <a href="mailto:oficina@asociacionemanuel.org"><img src="https://6a5b82756ffa544c41fc3967--zippy-sundae-69844e.netlify.app/icons/mail.png" alt="Email"></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="/nuestro-trabajo/">Nuestro trabajo</a></li>
+          <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
+          <li><a href="/sumate/">Sumate</a></li>
+          <li><a href="/sobre-nosotros/#transparencia">Transparencia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>oficina@asociacionemanuel.org</li>
+          <li>11 3350-8156</li>
+          <li>2101-3612 (fijo)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Datos legales</h4>
+        <ul>
+          <li>CUIT 33-70791191-9</li>
+          <li>Personería DPPJ N° 23627</li>
+          <li>Iglesia fundada en 1955</li>
+          <li>Asociación Civil desde el 28/12/2001</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Emanuel — Iglesia Cristiana Evangélica.</span>
+      <span>Sitio institucional — versión de trabajo.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
